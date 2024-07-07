@@ -5,11 +5,11 @@ import java.util.List;
 public class StoreInfo {
 
     @com.squareup.moshi.Json(name = "count")
-    private Integer count;
+    private int count;
     @com.squareup.moshi.Json(name = "stores")
     private List<Store> stores;
 
-    public Integer getCount() {
+    public int getCount() {
         return count;
     }
 
