@@ -1,5 +1,6 @@
 package com.example.maskinfo.adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewHolder> {
-
     private List<Store> mItems = new ArrayList<>();
 
-
-    // 아이템 뷰 정보를 가지고 있는 클래스
+    /**
+     * 아이템 뷰 정보를 가지고 있는 클래스
+     */
     class StoreViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
         TextView addressTextView;
@@ -38,9 +39,15 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewHol
         }
     }
 
+    /**
+     * UI 업데이트
+     *
+     * @param items 업데이트 할 아이템
+     */
+    @SuppressLint("NotifyDataSetChanged")
     public void updateItems(List<Store> items) {
         mItems = items;
-        notifyDataSetChanged();     // UI 갱신
+        notifyDataSetChanged();
     }
 
     @NonNull
